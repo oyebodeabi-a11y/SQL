@@ -1,3 +1,5 @@
+
+## "SELECT QUERIES"
 # To display all entries in a Customers table 
 SELECT *
 FROM Customers
@@ -24,4 +26,12 @@ ORDER BY CustomerName ASC;
 SELECT *
 FROM Customers
 ORDER BY Country ASC, CustomerName ASC;
-
+# To display customers not in Argentina
+SELECT CustomerName,City,Country FROM Customers
+WHERE Country NOT IN ('Argentina');
+# To display between prices
+SELECT TOP 5 * FROM Products
+Where Price between 18.00 and 22.00
+# To show columns in Product table and arrange price in ascending order
+SELECT ProductName, Price FROM Products
+ORDER BY Price ASC;

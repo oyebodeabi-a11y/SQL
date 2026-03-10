@@ -35,3 +35,30 @@ Where Price between 18.00 and 22.00
 # To show columns in Product table and arrange price in ascending order
 SELECT ProductName, Price FROM Products
 ORDER BY Price ASC;
+# In descending order
+SELECT ProductName, Price FROM Products
+ORDER BY Price DESC;
+# Show records from specific dates and a customer ID
+SELECT * FROM Orders
+Where OrderDate between '1996-07-08' and '1996-07-10'
+and CustomerID = 34
+# To show unique records
+SELECT DISTINCT Country FROM Customers;
+# To show records using AND
+SELECT * FROM Customers
+WHERE Country = 'Spain' AND CustomerName LIKE 'F%'
+# To show records starting with a letter
+SELECT * FROM Customers
+WHERE Country LIKE 'S%'
+# To count
+SELECT COUNT(*)
+FROM Orders;
+# To join tables using a common ID to the tables
+SELECT CustomerName, City, Country
+FROM Customers
+INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+# To show tables using common ID to tables and showing country in descending  order
+SELECT CustomerName, City, Country
+FROM Customers
+INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+ORDER by Country DESC;
